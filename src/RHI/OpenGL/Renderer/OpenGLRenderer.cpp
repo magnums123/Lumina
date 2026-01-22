@@ -27,7 +27,7 @@ void OpenGLRenderer::Init()
     glEnableVertexAttribArray(0);
 }
 
-void OpenGLRenderer::SubmitScene(Scene& scene) {}
+void OpenGLRenderer::SubmitScene(const Scene& scene) {}
 
 void OpenGLRenderer::StartFrame()
 {

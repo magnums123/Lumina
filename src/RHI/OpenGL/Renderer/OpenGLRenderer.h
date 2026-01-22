@@ -17,7 +17,7 @@ class OpenGLRenderer : public RHIRenderer
     OpenGLRenderer(Window* windowHandle);
 
     void Init() override;
-    void SubmitScene(Scene& scene) override;
+    void SubmitScene(const Scene& scene) override;
     void StartFrame() override;
     void EndFrame() override;
     void Destroy() override;
