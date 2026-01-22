@@ -12,15 +12,15 @@ namespace Lumina
 class GameLayer : public Layer
 {
   private:
-    Application* app;
+    Lumina::Application* app;
 
-    // Shader* testShader = nullptr;
-    // std::vector<Vertex> vertices{
-    //     {{-0.5f, -0.5f, 0.0f}}, {{0.5f, -0.5f, 0.0f}}, {{0.0f, 0.5f, 0.0f}}};
-    // Mesh triangleMesh{vertices, testShader};
-    //
-    // Camera camera{75.f, 1920, 1080};
-    // Scene testScene{camera};
+    Shader* testShader = nullptr;
+    std::vector<Vertex> vertices{
+        {{-0.5f, -0.5f, 0.0f}}, {{0.5f, -0.5f, 0.0f}}, {{0.0f, 0.5f, 0.0f}}};
+    Mesh triangleMesh{vertices, testShader};
+
+    Camera camera{75.f, 1920, 1080};
+    Scene testScene{camera};
 
   public:
     GameLayer(const char* name = "GameLayer") : Layer(name) {}
