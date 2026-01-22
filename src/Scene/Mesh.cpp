@@ -1,4 +1,5 @@
-#include "Mesh.h"
+#include <RHI/Renderer.h>
+#include <Scene/Mesh.h>
 
 namespace Lumina
 {
@@ -16,5 +17,5 @@ Mesh::Mesh(const std::vector<Vertex>& vertices,
     usesIndices = true;
 }
 
-void Mesh::Draw() {}
+void Mesh::Draw(RHIRenderer* renderer) const { renderer->DrawMesh(this); }
 } // namespace Lumina

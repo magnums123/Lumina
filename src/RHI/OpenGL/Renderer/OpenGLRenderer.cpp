@@ -1,6 +1,7 @@
 #include <Core/Window.h>
 #include <RHI/Context.h>
 #include <RHI/OpenGL/Renderer/OpenGLRenderer.h>
+#include <Scene/Mesh.h>
 
 float vertices[] = {-0.5f, -0.5f, 0.0f, 0.5f, -0.5f, 0.0f, 0.0f, 0.5f, 0.0f};
 
@@ -27,7 +28,13 @@ void OpenGLRenderer::Init()
     glEnableVertexAttribArray(0);
 }
 
-void OpenGLRenderer::SubmitScene(const Scene& scene) {}
+void OpenGLRenderer::SubmitScene(const Scene& scene)
+{
+    for (const Mesh& mesh : scene.meshes)
+        {
+            mesh.Draw(this);
+        }
+}
 
 void OpenGLRenderer::StartFrame()
 {

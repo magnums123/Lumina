@@ -1,5 +1,6 @@
 #pragma once
-#include "RHI/OpenGL/Shader/OpenGLShader.h"
+#include <RHI/OpenGL/Shader/OpenGLShader.h>
+#include <RHI/Renderer.h>
 #include <Scene/Vertex.h>
 #include <vector>
 namespace Lumina
@@ -14,11 +15,11 @@ class Mesh
 
     bool usesIndices = false;
 
+    virtual void Draw(RHIRenderer* renderer) const;
+
   private:
     Shader* shader;
     std::vector<Vertex> m_Vertices;
     std::vector<unsigned int> m_Indices;
-
-    virtual void Draw();
 };
 } // namespace Lumina
