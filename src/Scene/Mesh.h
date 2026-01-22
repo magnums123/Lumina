@@ -6,10 +6,10 @@
 class Mesh
 {
   public:
-    Mesh(std::vector<Vertex>& vertices, Shader* shader);
+    Mesh(std::vector<Vertex>& vertices, Shader* shader) {};
     Mesh(std::vector<Vertex>& vertices,
         std::vector<unsigned int>& indices,
-        Shader* shader);
+        Shader* shader) {};
 
     bool usesIndices = false;
 

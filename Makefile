@@ -5,7 +5,7 @@ LDFLAGS = -lglfw -lGL -ldl
 SRC = $(shell find src -name "*.cpp") external/glad/src/glad.c
 OBJ = $(SRC:.cpp=.o)
 
-TARGET = engine
+TARGET = LuminaEngine
 
 all: $(TARGET)
 
