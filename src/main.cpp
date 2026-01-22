@@ -1,15 +1,19 @@
 #include "Core/Application.h"
 #include "Layers/GameLayer/GameLayer.h"
 
-class Sandbox : public Engine::Application
+namespace Lumina
+{
+
+class Sandbox : public Application
 {
   public:
     Sandbox() { PushLayer(new GameLayer()); }
     ~Sandbox() {}
 };
+} // namespace Lumina
 
 int main()
 {
-    Sandbox app;
+    Lumina::Sandbox app;
     app.Run();
 }
