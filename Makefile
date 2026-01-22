@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS =  -g -std=c++23 -Wall -Wextra -Iexternal/glad/include -Isrc -Iexternal
+CXXFLAGS =  -g -std=c++23 -Iexternal/glad/include -Isrc -Iexternal #-Wall -Wextra 
 LDFLAGS = -lglfw -lGL -ldl
 
 SRC = $(shell find src -name "*.cpp") external/glad/src/glad.c

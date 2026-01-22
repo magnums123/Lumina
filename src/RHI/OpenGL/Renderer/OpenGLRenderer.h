@@ -1,5 +1,4 @@
 #pragma once
-#include "RHI/OpenGL/Shader/OpenGLShader.h"
 #include <Core/Window.h>
 #include <RHI/Renderer.h>
 
@@ -10,7 +9,6 @@ class OpenGLRenderer : public RHIRenderer
 {
   private:
     Window* windowHandle;
-    Shader* shader = nullptr;
     unsigned int VAO, VBO;
 
   public:
@@ -18,6 +16,8 @@ class OpenGLRenderer : public RHIRenderer
 
     void Init() override;
     void SubmitScene(const Scene& scene) override;
+    void DrawMesh(const Mesh& mesh) override;
+    void DrawMeshInstanced(const Mesh& mesh) override;
     void StartFrame() override;
     void EndFrame() override;
     void Destroy() override;

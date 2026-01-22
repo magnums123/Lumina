@@ -3,18 +3,19 @@
 namespace Lumina
 {
 
-Mesh::Mesh(const std::vector<Vertex>& vertices, Shader* shader) :
-    shader(shader), m_Vertices(vertices)
+Mesh::Mesh(const std::vector<Vertex>& vertices, Shader* shader, int numInstances) :
+    numInstances(numInstances), shader(shader), vertices(vertices)
 {
     usesIndices = false;
 }
 
 Mesh::Mesh(const std::vector<Vertex>& vertices,
     const std::vector<unsigned int>& indices,
-    Shader* shader) : shader(shader), m_Vertices(vertices), m_Indices(indices)
+    Shader* shader,
+    int numInstances) :
+    numInstances(numInstances), shader(shader), vertices(vertices), indices(indices)
 {
     usesIndices = true;
 }
 
-void Mesh::Draw() {}
 } // namespace Lumina

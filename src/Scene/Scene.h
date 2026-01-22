@@ -8,10 +8,8 @@ namespace Lumina
 class Scene
 {
   public:
-    Scene();
+    Scene(Camera& camera) : camera(camera) {};
     Camera camera;
-    std::vector<Mesh> mesh;
-
-  private:
+    std::vector<Mesh> meshes;
 };
 } // namespace Lumina

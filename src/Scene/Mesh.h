@@ -4,21 +4,20 @@
 #include <vector>
 namespace Lumina
 {
-class Mesh
+struct Mesh
 {
   public:
-    Mesh(const std::vector<Vertex>& vertices, Shader* shader);
+    Mesh(const std::vector<Vertex>& vertices, Shader* shader, int numInstances = -1);
     Mesh(const std::vector<Vertex>& vertices,
         const std::vector<unsigned int>& indices,
-        Shader* shader);
+        Shader* shader,
+        int numInstances = -1);
 
     bool usesIndices = false;
+    int numInstances = -1;
 
-  private:
     Shader* shader;
-    std::vector<Vertex> m_Vertices;
-    std::vector<unsigned int> m_Indices;
-
-    virtual void Draw();
+    std::vector<Vertex> vertices;
+    std::vector<unsigned int> indices;
 };
 } // namespace Lumina

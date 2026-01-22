@@ -16,6 +16,9 @@ class RHIRenderer
 
     virtual void Init() = 0;
     virtual void SubmitScene(const Scene& scene) = 0;
+    virtual void DrawMesh(const Mesh& mesh) = 0;
+    // TODO: Take in the transforms for each instance as a parameter (Array or Vector)
+    virtual void DrawMeshInstanced(const Mesh& mesh) = 0;
     virtual void StartFrame() = 0;
     virtual void EndFrame() = 0;
     virtual void Destroy() = 0;
