@@ -1,5 +1,4 @@
 #pragma once
-#include "Scene/Mesh.h"
 #include <Core/Window.h>
 #include <RHI/Context.h>
 #include <Scene/Scene.h>
@@ -17,7 +16,6 @@ class RHIRenderer
 
     virtual void Init() = 0;
     virtual void SubmitScene(const Scene& scene) = 0;
-    virtual void DrawMesh(Mesh* mesh) = 0;
     virtual void StartFrame() = 0;
     virtual void EndFrame() = 0;
     virtual void Destroy() = 0;

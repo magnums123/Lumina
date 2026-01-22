@@ -10,7 +10,7 @@ class Scene
   public:
     Scene();
     Camera camera;
-    std::vector<Mesh> meshes;
+    std::vector<Mesh> mesh;
 
   private:
 };
