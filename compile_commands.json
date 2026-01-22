@@ -1,0 +1,141 @@
+[
+ {
+  "directory": "/data/data/com.termux/files/home/test_engine",
+  "arguments": [
+   "g++",
+   "-g",
+   "-std=c++23",
+   "-Wall",
+   "-Wextra",
+   "-Iexternal/glad/include",
+   "-Isrc",
+   "-c",
+   "src/Core/Application.cpp",
+   "-o",
+   "src/Core/Application.o"
+  ],
+  "file": "src/Core/Application.cpp"
+ },
+ {
+  "directory": "/data/data/com.termux/files/home/test_engine",
+  "arguments": [
+   "g++",
+   "-g",
+   "-std=c++23",
+   "-Wall",
+   "-Wextra",
+   "-Iexternal/glad/include",
+   "-Isrc",
+   "-c",
+   "src/Core/LayerStack.cpp",
+   "-o",
+   "src/Core/LayerStack.o"
+  ],
+  "file": "src/Core/LayerStack.cpp"
+ },
+ {
+  "directory": "/data/data/com.termux/files/home/test_engine",
+  "arguments": [
+   "g++",
+   "-g",
+   "-std=c++23",
+   "-Wall",
+   "-Wextra",
+   "-Iexternal/glad/include",
+   "-Isrc",
+   "-c",
+   "src/Platform/GLFW/GLFWWindow.cpp",
+   "-o",
+   "src/Platform/GLFW/GLFWWindow.o"
+  ],
+  "file": "src/Platform/GLFW/GLFWWindow.cpp"
+ },
+ {
+  "directory": "/data/data/com.termux/files/home/test_engine",
+  "arguments": [
+   "g++",
+   "-g",
+   "-std=c++23",
+   "-Wall",
+   "-Wextra",
+   "-Iexternal/glad/include",
+   "-Isrc",
+   "-c",
+   "src/RHI/OpenGL/OpenGLContext.cpp",
+   "-o",
+   "src/RHI/OpenGL/OpenGLContext.o"
+  ],
+  "file": "src/RHI/OpenGL/OpenGLContext.cpp"
+ },
+ {
+  "directory": "/data/data/com.termux/files/home/test_engine",
+  "arguments": [
+   "g++",
+   "-g",
+   "-std=c++23",
+   "-Wall",
+   "-Wextra",
+   "-Iexternal/glad/include",
+   "-Isrc",
+   "-c",
+   "src/RHI/OpenGL/OpenGLShader.cpp",
+   "-o",
+   "src/RHI/OpenGL/OpenGLShader.o"
+  ],
+  "file": "src/RHI/OpenGL/OpenGLShader.cpp"
+ },
+ {
+  "directory": "/data/data/com.termux/files/home/test_engine",
+  "arguments": [
+   "g++",
+   "-g",
+   "-std=c++23",
+   "-Wall",
+   "-Wextra",
+   "-Iexternal/glad/include",
+   "-Isrc",
+   "-c",
+   "src/main.cpp",
+   "-o",
+   "src/main.o"
+  ],
+  "file": "src/main.cpp"
+ },
+ {
+  "directory": "/data/data/com.termux/files/home/test_engine",
+  "arguments": [
+   "g++",
+   "-g",
+   "-std=c++23",
+   "-Wall",
+   "-Wextra",
+   "-Iexternal/glad/include",
+   "-Isrc",
+   "-c",
+   "src/Layers/GameLayer/GameLayer.cpp",
+   "-o",
+   "src/Layers/GameLayer/GameLayer.o"
+  ],
+  "file": "src/Layers/GameLayer/GameLayer.cpp"
+ },
+ {
+  "directory": "/data/data/com.termux/files/home/test_engine",
+  "arguments": [
+   "g++",
+   "src/Core/Application.o",
+   "src/Core/LayerStack.o",
+   "src/Platform/GLFW/GLFWWindow.o",
+   "src/RHI/OpenGL/OpenGLContext.o",
+   "src/RHI/OpenGL/OpenGLShader.o",
+   "src/main.o",
+   "src/Layers/GameLayer/GameLayer.o",
+   "external/glad/src/glad.c",
+   "-o",
+   "engine",
+   "-lglfw",
+   "-lGL",
+   "-ldl"
+  ],
+  "file": "external/glad/src/glad.c"
+ }
+]
