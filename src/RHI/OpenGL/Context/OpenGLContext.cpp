@@ -1,6 +1,6 @@
 #include "OpenGLContext.h"
-#include "Core/Log.h"
-#include "glad/glad.h"
+#include <Core/Log.h>
+#include <glad/glad.h>
 #include <stdexcept>
 
 namespace Engine

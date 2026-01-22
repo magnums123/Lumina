@@ -1,6 +1,6 @@
 #include <Core/Window.h>
 #include <RHI/Context.h>
-#include <RHI/OpenGL/OpenGLRenderer.h>
+#include <RHI/OpenGL/Renderer/OpenGLRenderer.h>
 
 float vertices[] = {-0.5f, -0.5f, 0.0f, 0.5f, -0.5f, 0.0f, 0.0f, 0.5f, 0.0f};
 
@@ -26,6 +26,8 @@ void OpenGLRenderer::Init()
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*) 0);
     glEnableVertexAttribArray(0);
 }
+
+void OpenGLRenderer::SubmitScene(Scene& scene) {}
 
 void OpenGLRenderer::StartFrame()
 {
