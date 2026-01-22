@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Engine
+namespace Lumina
 {
 
 enum class EventType
@@ -51,4 +51,4 @@ class WindowCloseEvent : public Event
     const char* GetName() const override { return "WindowClose"; }
 };
 
-} // namespace Engine
+} // namespace Lumina

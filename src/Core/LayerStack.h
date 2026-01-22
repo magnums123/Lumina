@@ -2,7 +2,7 @@
 #include "Layer.h"
 #include <vector>
 
-namespace Engine
+namespace Lumina
 {
 
 class LayerStack
@@ -21,4 +21,4 @@ class LayerStack
     unsigned int m_LayerInsertIndex = 0;
 };
 
-} // namespace Engine
+} // namespace Lumina

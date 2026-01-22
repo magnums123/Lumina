@@ -3,6 +3,8 @@
 #include <Scene/Mesh.h>
 #include <vector>
 
+namespace Lumina
+{
 class Scene
 {
   public:
@@ -12,3 +14,4 @@ class Scene
 
   private:
 };
+} // namespace Lumina

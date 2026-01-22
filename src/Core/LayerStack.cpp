@@ -1,6 +1,6 @@
 #include "LayerStack.h"
 
-namespace Engine
+namespace Lumina
 {
 
 LayerStack::~LayerStack()
@@ -25,4 +25,4 @@ void LayerStack::PushOverlay(Layer* overlay)
     overlay->OnAttach();
 }
 
-} // namespace Engine
+} // namespace Lumina

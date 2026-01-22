@@ -3,7 +3,7 @@
 #include <Core/Window.h>
 #include <RHI/Renderer.h>
 
-namespace Engine
+namespace Lumina
 {
 class OpenGLRenderer : public RHIRenderer
 
@@ -22,4 +22,4 @@ class OpenGLRenderer : public RHIRenderer
     void EndFrame() override;
     void Destroy() override;
 };
-} // namespace Engine
+} // namespace Lumina

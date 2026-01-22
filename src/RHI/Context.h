@@ -1,7 +1,7 @@
 #pragma once
 #include <Core/Window.h>
 
-namespace Engine
+namespace Lumina
 {
 
 class RHIContext
@@ -12,4 +12,4 @@ class RHIContext
     static RHIContext* Create(Window* windowHandle);
 };
 
-} // namespace Engine
+} // namespace Lumina

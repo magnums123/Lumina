@@ -3,12 +3,12 @@
 #include <functional>
 #include <string>
 
-namespace Engine
+namespace Lumina
 {
 
 struct WindowProps
 {
-    std::string Title = "Engine";
+    std::string Title = "Lumina";
     unsigned int Width = 1280;
     unsigned int Height = 720;
 };
@@ -32,4 +32,4 @@ class Window
     static Window* Create(const WindowProps& props);
 };
 
-} // namespace Engine
+} // namespace Lumina

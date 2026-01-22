@@ -4,7 +4,7 @@
 
 float vertices[] = {-0.5f, -0.5f, 0.0f, 0.5f, -0.5f, 0.0f, 0.0f, 0.5f, 0.0f};
 
-namespace Engine
+namespace Lumina
 {
 OpenGLRenderer::OpenGLRenderer(Window* windowHandle) : windowHandle(windowHandle)
 {
@@ -54,4 +54,4 @@ RHIRenderer* RHIRenderer::Create(Window* windowHandle)
 {
     return new OpenGLRenderer(windowHandle);
 }
-} // namespace Engine
+} // namespace Lumina

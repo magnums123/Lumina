@@ -3,6 +3,9 @@
 #include <fstream>
 #include <sstream>
 
+namespace Lumina
+{
+
 Shader::Shader(const char* vertexPath, const char* fragmentPath)
 {
     // 1. retrieve the vertex/fragment source code from filePath
@@ -111,3 +114,4 @@ void Shader::Delete()
     if (ID != 0)
         glDeleteProgram(ID);
 }
+} // namespace Lumina

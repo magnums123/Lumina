@@ -3,7 +3,7 @@
 #include <RHI/Context.h>
 #include <Scene/Scene.h>
 
-namespace Engine
+namespace Lumina
 {
 class RHIRenderer
 {
@@ -22,4 +22,4 @@ class RHIRenderer
 
     static RHIRenderer* Create(Window* windowHandle);
 };
-} // namespace Engine
+} // namespace Lumina

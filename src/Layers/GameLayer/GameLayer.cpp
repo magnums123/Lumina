@@ -5,7 +5,7 @@
 
 void GameLayer::OnAttach()
 {
-    app = Engine::Application::Get();
+    app = Lumina::Application::Get();
     ENGINE_LOG("GameLayer attached");
 }
 
@@ -21,7 +21,7 @@ void GameLayer::OnUpdate(float dt)
     app->Renderer->EndFrame();
 }
 
-void GameLayer::OnEvent(Engine::Event& e)
+void GameLayer::OnEvent(Lumina::Event& e)
 {
     // Handle input/events here
 }

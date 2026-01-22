@@ -1,7 +1,8 @@
 #pragma once
 #include <glad/glad.h> // include glad to get the required OpenGL headers
 #include <string>
-
+namespace Lumina
+{
 class Shader
 {
   public:
@@ -18,3 +19,4 @@ class Shader
     void setInt(const std::string& name, int value) const;
     void setFloat(const std::string& name, float value) const;
 };
+}; // namespace Lumina

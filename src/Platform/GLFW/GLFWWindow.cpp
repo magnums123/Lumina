@@ -3,7 +3,7 @@
 #include <GLFW/glfw3.h>
 #include <stdexcept>
 
-namespace Engine
+namespace Lumina
 {
 
 static bool s_GLFWInitialized = false;
@@ -56,4 +56,4 @@ void GLFWWindow::SwapBuffers() { glfwSwapBuffers(m_Window); }
 
 void* GLFWWindow::GetProcAddress() { return (void*) glfwGetProcAddress; }
 
-} // namespace Engine
+} // namespace Lumina

@@ -2,14 +2,15 @@
 #include "RHI/OpenGL/Shader/OpenGLShader.h"
 #include <Scene/Vertex.h>
 #include <vector>
-
+namespace Lumina
+{
 class Mesh
 {
   public:
-    Mesh(std::vector<Vertex>& vertices, Shader* shader) {};
-    Mesh(std::vector<Vertex>& vertices,
-        std::vector<unsigned int>& indices,
-        Shader* shader) {};
+    Mesh(const std::vector<Vertex>& vertices, Shader* shader);
+    Mesh(const std::vector<Vertex>& vertices,
+        const std::vector<unsigned int>& indices,
+        Shader* shader);
 
     bool usesIndices = false;
 
@@ -20,3 +21,4 @@ class Mesh
 
     virtual void Draw();
 };
+} // namespace Lumina

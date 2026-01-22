@@ -3,10 +3,10 @@
 #include <Core/Layer.h>
 #include <glad/glad.h>
 
-class GameLayer : public Engine::Layer
+class GameLayer : public Lumina::Layer
 {
   private:
-    Engine::Application* app;
+    Lumina::Application* app;
 
   public:
     GameLayer() : Layer("GameLayer") {}
@@ -14,5 +14,5 @@ class GameLayer : public Engine::Layer
     void OnAttach() override;
     void OnDetach() override;
     void OnUpdate(float dt) override;
-    void OnEvent(Engine::Event& e) override;
+    void OnEvent(Lumina::Event& e) override;
 };

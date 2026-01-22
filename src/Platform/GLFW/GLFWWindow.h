@@ -3,7 +3,7 @@
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
 
-namespace Engine
+namespace Lumina
 {
 
 class GLFWWindow : public Window
@@ -42,4 +42,4 @@ class GLFWWindow : public Window
     WindowData m_Data;
 };
 
-} // namespace Engine
+} // namespace Lumina

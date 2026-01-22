@@ -3,6 +3,8 @@
 #include "glm/ext/vector_float3.hpp"
 #include <glm/glm.hpp>
 
+namespace Lumina
+{
 class Camera
 {
   public:
@@ -19,3 +21,4 @@ class Camera
     glm::mat4 Projection{1.f};
     glm::mat4 view{1.f};
 };
+} // namespace Lumina

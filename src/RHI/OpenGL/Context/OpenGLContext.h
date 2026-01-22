@@ -1,7 +1,7 @@
 #pragma once
 #include <Core/Window.h>
 #include <RHI/Context.h>
-namespace Engine
+namespace Lumina
 {
 
 class OpenGLContext : public RHIContext
@@ -15,4 +15,4 @@ class OpenGLContext : public RHIContext
     Window* m_WindowHandle;
 };
 
-} // namespace Engine
+} // namespace Lumina

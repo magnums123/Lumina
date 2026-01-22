@@ -3,7 +3,7 @@
 #include "Window.h"
 #include <RHI/Renderer.h>
 
-namespace Engine
+namespace Lumina
 {
 class Application
 {
@@ -31,4 +31,4 @@ class Application
     LayerStack* m_LayerStack;
 };
 
-} // namespace Engine
+} // namespace Lumina

@@ -3,7 +3,7 @@
 #include "RHI/Renderer.h"
 #include "Window.h"
 
-namespace Engine
+namespace Lumina
 {
 Application* Application::s_Instance = nullptr;
 
@@ -61,4 +61,4 @@ void Application::OnEvent(Event& e)
 void Application::PushLayer(Layer* layer) { m_LayerStack->PushLayer(layer); }
 
 void Application::PushOverlay(Layer* layer) { m_LayerStack->PushOverlay(layer); }
-} // namespace Engine
+} // namespace Lumina

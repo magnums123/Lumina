@@ -3,7 +3,7 @@
 #include <glad/glad.h>
 #include <stdexcept>
 
-namespace Engine
+namespace Lumina
 {
 
 OpenGLContext::OpenGLContext(Window* windowHandle) : m_WindowHandle(windowHandle) {}
@@ -22,4 +22,4 @@ RHIContext* RHIContext::Create(Window* windowHandle)
     return new OpenGLContext(windowHandle);
 }
 
-} // namespace Engine
+} // namespace Lumina
