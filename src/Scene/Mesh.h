@@ -1,7 +1,9 @@
 #pragma once
 #include "RHI/OpenGL/Shader/OpenGLShader.h"
+#include <RHI/Buffer.h>
 #include <Scene/Vertex.h>
 #include <vector>
+
 namespace Lumina
 {
 struct Mesh
@@ -18,7 +20,11 @@ struct Mesh
     int numInstances = -1;
 
     Shader* shader;
-    unsigned int VAO = 0, VBO = 0, IBO = 0;
+
+    RHIBuffer* vertexArrayBuffer = RHIBuffer::Create(BufferType::VertexArray);
+    RHIBuffer* vertexBuffer = RHIBuffer::Create(BufferType::VertexBuffer);
+    RHIBuffer* indexBuffer = RHIBuffer::Create(BufferType::IndexBuffer);
+
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
 };
