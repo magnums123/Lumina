@@ -1,6 +1,6 @@
 #include "Mesh.h"
 #include "RHI/OpenGL/Shader/OpenGLShader.h"
-#include "Scene/Vertex.h"
+#include <Scene/Vertex.h>
 
 namespace Lumina
 {

@@ -6,7 +6,7 @@
 
 namespace Lumina
 {
-struct Mesh
+class Mesh
 {
   public:
     Mesh(const std::vector<Vertex>& vertices, Shader& shader, int numInstances = -1);

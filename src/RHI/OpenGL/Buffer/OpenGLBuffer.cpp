@@ -22,6 +22,7 @@ OpenGLBuffer::OpenGLBuffer(BufferType bufferType) : RHIBuffer(bufferType)
                 ENGINE_WARN("Invalid BufferType Created.");
                 break;
         }
+    ENGINE_LOG("Created New Buffer");
 }
 
 OpenGLBuffer::~OpenGLBuffer() { Delete(); }
