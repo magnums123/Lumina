@@ -39,13 +39,15 @@ void OpenGLRenderer::DrawMesh(const Mesh& mesh)
 {
     if (mesh.usesIndices)
         {
-            // Use IBO
+            mesh.shader->use();
+            glBindVertexArray(mesh.VAO);
+            glDrawElements(GL_TRIANGLES, mesh.indices.size(), GL_UNSIGNED_INT, 0);
         }
     else
         {
             mesh.shader->use();
             glBindVertexArray(mesh.VAO);
-            glDrawArrays(GL_TRIANGLES, 0, 3);
+            glDrawArrays(GL_TRIANGLES, 0, mesh.vertices.size());
         }
 }
 

@@ -5,7 +5,6 @@
 #include <Scene/Scene.h>
 #include <Scene/Vertex.h>
 #include <glad/glad.h>
-#include <vector>
 
 namespace Lumina
 {
@@ -15,8 +14,6 @@ class GameLayer : public Layer
     Lumina::Application* app;
 
     Shader* testShader = nullptr;
-    std::vector<Vertex> vertices{
-        {{-0.5f, -0.5f, 0.0f}}, {{0.5f, -0.5f, 0.0f}}, {{0.0f, 0.5f, 0.0f}}};
     Mesh* triangleMesh = nullptr;
 
     Camera camera{75.f, 1920, 1080};

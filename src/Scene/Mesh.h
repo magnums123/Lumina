@@ -18,7 +18,7 @@ struct Mesh
     int numInstances = -1;
 
     Shader* shader;
-    unsigned int VAO = 0, VBO = 0;
+    unsigned int VAO = 0, VBO = 0, IBO = 0;
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
 };
