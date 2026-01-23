@@ -40,7 +40,7 @@ void Application::Run()
 
 void Application::OnEvent(Event& e)
 {
-    ENGINE_LOG("event triggered: " << e.GetName());
+    ENGINE_LOG("event triggered: " << e.GetName() << " From Application");
     EventDispatcher dispatcher(e);
 
     dispatcher.Dispatch<WindowCloseEvent>(

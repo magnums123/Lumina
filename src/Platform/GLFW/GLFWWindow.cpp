@@ -1,4 +1,5 @@
 #include "GLFWWindow.h"
+#include "Core/Event.h"
 #include "Core/Log.h"
 #include <GLFW/glfw3.h>
 #include <stdexcept>
@@ -37,6 +38,23 @@ void GLFWWindow::Init(const WindowProps& props)
     glfwMakeContextCurrent(m_Window);
     glfwSetWindowUserPointer(m_Window, &m_Data);
     glfwSwapInterval(1);
+
+    glfwSetKeyCallback(m_Window,
+        [](GLFWwindow* window, int key, int scancode, int action, int mods)
+            {
+                if (action == GLFW_PRESS)
+                    {
+                        ENGINE_LOG("KeyPressEvent Triggered");
+                        KeyPressEvent event;
+                        event.key = key;
+                        event.scancode = scancode;
+                        event.mods = mods;
+
+                        WindowData& data =
+                            *(WindowData*) glfwGetWindowUserPointer(window);
+                        data.EventCallback(event);
+                    }
+            });
 
     glfwSetWindowCloseCallback(m_Window,
         [](GLFWwindow* window)

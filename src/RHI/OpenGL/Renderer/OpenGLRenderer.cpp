@@ -1,18 +1,26 @@
+#include "Core/Log.h"
+#include "RHI/OpenGL/Shader/OpenGLShader.h"
 #include <Core/Window.h>
 #include <RHI/Context.h>
 #include <RHI/OpenGL/Renderer/OpenGLRenderer.h>
 
 namespace Lumina
 {
-OpenGLRenderer::OpenGLRenderer(Window* windowHandle) : windowHandle(windowHandle)
+OpenGLRenderer::OpenGLRenderer(Window* windowHandle)
 {
     context = RHIContext::Create(windowHandle);
+    ENGINE_LOG("Created Uninitialized Context");
 }
 
-void OpenGLRenderer::Init() { context->Init(); }
+void OpenGLRenderer::Init()
+{
+    context->Init();
+    ENGINE_LOG("Context Initialized");
+}
 
 void OpenGLRenderer::SubmitScene(const Scene& scene)
 {
+    StartFrame();
     for (const Mesh& mesh : scene.meshes)
         {
             if (mesh.numInstances > 1)
@@ -24,6 +32,7 @@ void OpenGLRenderer::SubmitScene(const Scene& scene)
                     DrawMesh(mesh);
                 }
         }
+    EndFrame();
 }
 
 void OpenGLRenderer::DrawMesh(const Mesh& mesh)
@@ -34,20 +43,8 @@ void OpenGLRenderer::DrawMesh(const Mesh& mesh)
         }
     else
         {
-            glGenVertexArrays(1, &VAO);
-            glGenBuffers(1, &VBO);
-
-            glBindVertexArray(VAO);
-            glBindBuffer(GL_ARRAY_BUFFER, VBO);
-
-            glBufferData(GL_ARRAY_BUFFER, mesh.vertices.size(), mesh.vertices.data(),
-                GL_STATIC_DRAW);
-
-            glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*) 0);
-            glEnableVertexAttribArray(0);
-            // Normal Rendering
             mesh.shader->use();
-            glBindVertexArray(VAO);
+            glBindVertexArray(mesh.VAO);
             glDrawArrays(GL_TRIANGLES, 0, 3);
         }
 }
@@ -72,13 +69,7 @@ void OpenGLRenderer::StartFrame()
 
 void OpenGLRenderer::EndFrame() {}
 
-void OpenGLRenderer::Destroy()
-{
-    // shader->Delete();
-    // delete shader;
-    glDeleteVertexArrays(1, &VAO);
-    glDeleteBuffers(1, &VBO);
-}
+void OpenGLRenderer::Destroy() {}
 
 RHIRenderer* RHIRenderer::Create(Window* windowHandle)
 {

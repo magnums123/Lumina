@@ -43,6 +43,15 @@ class EventDispatcher
     Event& m_Event;
 };
 
+class KeyPressEvent : public Event
+{
+  public:
+    int key, scancode, mods;
+    static EventType GetStaticType() { return EventType::KeyPressed; }
+    EventType GetType() const override { return GetStaticType(); }
+    const char* GetName() const override { return "KeyPress"; }
+};
+
 class WindowCloseEvent : public Event
 {
   public:

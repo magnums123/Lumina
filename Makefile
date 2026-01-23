@@ -2,7 +2,7 @@ CXX = g++
 CXXFLAGS =  -g -std=c++23 -Iexternal/glad/include -Isrc -Iexternal #-Wall -Wextra 
 LDFLAGS = -lglfw -lGL -ldl
 
-SRC = $(shell find src -name "*.cpp") external/glad/src/glad.c
+SRC = $(shell find src -name "*.cpp") external/glad/src/glad.cpp
 OBJ = $(SRC:.cpp=.o)
 
 TARGET = LuminaEngine
@@ -14,6 +14,10 @@ $(TARGET): $(OBJ)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+run: $(TARGET)
+	./$(TARGET)
+
 
 clean:
 	rm -f $(OBJ) $(TARGET)
