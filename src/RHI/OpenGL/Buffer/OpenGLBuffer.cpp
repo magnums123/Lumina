@@ -1,5 +1,7 @@
 #include "OpenGLBuffer.h"
 #include "Core/Log.h"
+#include "RHI/Buffer.h"
+#include "Scene/Vertex.h"
 #include <glad/glad.h>
 
 namespace Lumina
@@ -59,6 +61,22 @@ void OpenGLBuffer::UnBind()
                 break;
             case BufferType::IndexBuffer:
                 glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+                break;
+            default:
+                break;
+        }
+}
+
+void OpenGLBuffer::SetData(const void* data, size_t size)
+{
+
+    switch (bufferType)
+        {
+            case BufferType::VertexBuffer:
+                glBufferData(GL_ARRAY_BUFFER, size, data, GL_STATIC_DRAW);
+                break;
+            case BufferType::IndexBuffer:
+                glBufferData(GL_ELEMENT_ARRAY_BUFFER, size, data, GL_STATIC_DRAW);
                 break;
             default:
                 break;

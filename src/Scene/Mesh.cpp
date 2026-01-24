@@ -1,4 +1,5 @@
 #include "Mesh.h"
+#include "RHI/Buffer.h"
 #include <Scene/Vertex.h>
 #include <glad/glad.h>
 
@@ -15,13 +16,19 @@ Mesh::Mesh(const std::vector<Vertex>& vertices, RHIShader& shader, int numInstan
 
     vertexArrayBuffer->Bind();
     vertexBuffer->Bind();
+    RHIBuffer::SetupData(vertexBuffer, vertices);
 
-    glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(Vertex), vertices.data(),
-        GL_STATIC_DRAW);
+    const auto& layout = Vertex::GetLayout();
+    uint32_t index = 0;
 
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*) 0);
-
-    glEnableVertexAttribArray(0);
+    for (const auto& element : layout.GetElements())
+        {
+            glEnableVertexAttribArray(index);
+            glVertexAttribPointer(index, element.size / 4, GL_FLOAT,
+                element.normalized ? GL_TRUE : GL_FALSE, layout.GetStride(),
+                (const void*) element.offset);
+            index++;
+        }
 }
 
 Mesh::Mesh(const std::vector<Vertex>& vertices,
@@ -39,16 +46,22 @@ Mesh::Mesh(const std::vector<Vertex>& vertices,
     vertexArrayBuffer->Bind();
 
     vertexBuffer->Bind();
-    glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(Vertex), vertices.data(),
-        GL_STATIC_DRAW);
+    RHIBuffer::SetupData(vertexBuffer, vertices);
 
     indexBuffer->Bind();
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int),
-        indices.data(), GL_STATIC_DRAW);
+    RHIBuffer::SetupData<unsigned int>(indexBuffer, indices);
 
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*) 0);
+    const auto& layout = Vertex::GetLayout();
+    uint32_t index = 0;
 
-    glEnableVertexAttribArray(0);
+    for (const auto& element : layout.GetElements())
+        {
+            glEnableVertexAttribArray(index);
+            glVertexAttribPointer(index, element.size / 4, GL_FLOAT,
+                element.normalized ? GL_TRUE : GL_FALSE, layout.GetStride(),
+                (const void*) element.offset);
+            index++;
+        }
 }
 Mesh::~Mesh()
 {
