@@ -16,8 +16,8 @@ class OpenGLRenderer : public RHIRenderer
 
     void Init() override;
     void SubmitScene(const Scene& scene) override;
-    void DrawMesh(const Mesh& mesh) override;
-    void DrawMeshInstanced(const Mesh& mesh) override;
+    void DrawMesh(const Mesh* mesh) override;
+    void DrawMeshInstanced(const Mesh* mesh) override;
     void Destroy() override;
 };
 } // namespace Lumina

@@ -54,6 +54,18 @@ void GLFWWindow::Init(const WindowProps& props)
                             *(WindowData*) glfwGetWindowUserPointer(window);
                         data.EventCallback(event);
                     }
+                else if (action == GLFW_RELEASE)
+                    {
+                        ENGINE_LOG("KeyReleaseEvent Triggered");
+                        KeyReleaseEvent event;
+                        event.key = key;
+                        event.scancode = scancode;
+                        event.mods = mods;
+
+                        WindowData& data =
+                            *(WindowData*) glfwGetWindowUserPointer(window);
+                        data.EventCallback(event);
+                    }
             });
 
     glfwSetWindowCloseCallback(m_Window,

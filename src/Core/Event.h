@@ -49,7 +49,16 @@ class KeyPressEvent : public Event
     int key, scancode, mods;
     static EventType GetStaticType() { return EventType::KeyPressed; }
     EventType GetType() const override { return GetStaticType(); }
-    const char* GetName() const override { return "KeyPress"; }
+    const char* GetName() const override { return "KeyPressed"; }
+};
+
+class KeyReleaseEvent : public Event
+{
+  public:
+    int key, scancode, mods;
+    static EventType GetStaticType() { return EventType::KeyReleased; }
+    EventType GetType() const override { return GetStaticType(); }
+    const char* GetName() const override { return "KeyReleased"; }
 };
 
 class WindowCloseEvent : public Event

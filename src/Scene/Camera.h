@@ -8,7 +8,10 @@ namespace Lumina
 class Camera
 {
   public:
-    Camera(float fov, int width, int height) : width(width), height(height), fov(fov) {};
+    Camera(float fov, int width, int height);
+
+    int GetWidth() const { return width; }
+    int GetHeight() const { return height; }
 
   private:
     int width, height;

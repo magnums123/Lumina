@@ -21,39 +21,30 @@ void OpenGLRenderer::Init()
 void OpenGLRenderer::SubmitScene(const Scene& scene)
 {
     StartFrame();
-    for (const Mesh& mesh : scene.meshes)
+    for (const Mesh* mesh : scene.meshes)
         {
-            if (mesh.numInstances > 1)
-                {
-                    DrawMeshInstanced(mesh);
-                }
+            if (mesh->numInstances > 1)
+                DrawMeshInstanced(mesh);
             else
-                {
-                    DrawMesh(mesh);
-                }
+                DrawMesh(mesh);
         }
     EndFrame();
 }
 
-void OpenGLRenderer::DrawMesh(const Mesh& mesh)
+void OpenGLRenderer::DrawMesh(const Mesh* mesh)
 {
-    if (mesh.usesIndices)
-        {
-            mesh.shader->use();
-            mesh.vertexArrayBuffer->Bind();
-            glDrawElements(GL_TRIANGLES, mesh.indices.size(), GL_UNSIGNED_INT, 0);
-        }
+    mesh->shader->use();
+    mesh->vertexArrayBuffer->Bind();
+
+    if (mesh->usesIndices)
+        glDrawElements(GL_TRIANGLES, mesh->indices.size(), GL_UNSIGNED_INT, 0);
     else
-        {
-            mesh.shader->use();
-            mesh.vertexArrayBuffer->Bind();
-            glDrawArrays(GL_TRIANGLES, 0, mesh.vertices.size());
-        }
+        glDrawArrays(GL_TRIANGLES, 0, mesh->vertices.size());
 }
 
-void OpenGLRenderer::DrawMeshInstanced(const Mesh& mesh)
+void OpenGLRenderer::DrawMeshInstanced(const Mesh* mesh)
 {
-    if (mesh.usesIndices)
+    if (mesh->usesIndices)
         {
             // Use IBO
         }
@@ -66,7 +57,7 @@ void OpenGLRenderer::DrawMeshInstanced(const Mesh& mesh)
 void OpenGLRenderer::StartFrame()
 {
     glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
 void OpenGLRenderer::EndFrame() {}

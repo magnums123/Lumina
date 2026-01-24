@@ -8,16 +8,12 @@
 namespace Lumina
 {
 
-std::vector<Vertex> vertices{{{0.5f, 0.5f, 0.0f}}, {{0.5f, -0.5f, 0.0f}},
-    {{-0.5f, -0.5f, 0.0f}}, {{-0.5f, 0.5f, 0.0f}}};
-std::vector<unsigned int> indices = {0, 1, 3, 1, 2, 3};
-
 void GameLayer::OnAttach()
 {
     app = Application::Get();
     testShader = new Shader("test_vert.glsl", "test_frag.glsl");
     triangleMesh = new Mesh{vertices, indices, *testShader};
-    testScene.meshes.push_back(*triangleMesh);
+    testScene.meshes.push_back(triangleMesh);
     ENGINE_LOG(this->GetName() << " attached");
 }
 
