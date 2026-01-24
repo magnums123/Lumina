@@ -1,6 +1,6 @@
 #pragma once
-#include "RHI/OpenGL/Shader/OpenGLShader.h"
 #include <RHI/Buffer.h>
+#include <RHI/Shader.h>
 #include <Scene/Vertex.h>
 #include <vector>
 
@@ -9,17 +9,17 @@ namespace Lumina
 class Mesh
 {
   public:
-    Mesh(const std::vector<Vertex>& vertices, Shader& shader, int numInstances = -1);
+    Mesh(const std::vector<Vertex>& vertices, RHIShader& shader, int numInstances = -1);
     Mesh(const std::vector<Vertex>& vertices,
         const std::vector<unsigned int>& indices,
-        Shader& shader,
+        RHIShader& shader,
         int numInstances = -1);
     ~Mesh();
 
     bool usesIndices = false;
     int numInstances = -1;
 
-    Shader* shader;
+    RHIShader* shader;
 
     RHIBuffer* vertexArrayBuffer = RHIBuffer::Create(BufferType::VertexArray);
     RHIBuffer* vertexBuffer = RHIBuffer::Create(BufferType::VertexBuffer);

@@ -1,12 +1,21 @@
 #include "OpenGLShader.h"
+#include "RHI/Shader.h"
 #include <Core/Log.h>
 #include <fstream>
 #include <sstream>
+#include <string>
 
 namespace Lumina
 {
 
-Shader::Shader(const char* vertexPath, const char* fragmentPath)
+RHIShader* RHIShader::Create(
+    std::string& vertexShaderPath, std::string& fragmentShaderPath)
+{
+    return new OpenGLShader(vertexShaderPath, fragmentShaderPath);
+}
+OpenGLShader::~OpenGLShader() { Delete(); }
+
+void OpenGLShader::Load(std::string& vertexShaderPath, std::string& fragmentShaderPath)
 {
     // 1. retrieve the vertex/fragment source code from filePath
     std::string vertexCode;
@@ -19,8 +28,8 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
     try
         {
             // open files
-            vShaderFile.open(vertexPath);
-            fShaderFile.open(fragmentPath);
+            vShaderFile.open(vertexShaderPath.c_str());
+            fShaderFile.open(fragmentShaderPath.c_str());
             std::stringstream vShaderStream, fShaderStream;
             // read file’s buffer contents into streams
             vShaderStream << vShaderFile.rdbuf();
@@ -90,28 +99,27 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
     isValid = true;
 }
 
-void Shader::use()
+void OpenGLShader::Use()
 {
     if (isValid)
         glUseProgram(ID);
 }
 
-void Shader::setBool(const std::string& name, bool value) const
-{
-    glUniform1i(glGetUniformLocation(ID, name.c_str()), (int) value);
-}
-void Shader::setInt(const std::string& name, int value) const
-{
-    glUniform1i(glGetUniformLocation(ID, name.c_str()), value);
-}
-void Shader::setFloat(const std::string& name, float value) const
-{
-    glUniform1f(glGetUniformLocation(ID, name.c_str()), value);
-}
+void OpenGLShader::SetUniforms() {}
 
-void Shader::Delete()
-{
-    if (ID != 0)
-        glDeleteProgram(ID);
-}
+void OpenGLShader::Delete() { glDeleteProgram(ID); }
+
+// void OpenGLShader::setBool(const std::string& name, bool value) const
+// {
+//     glUniform1i(glGetUniformLocation(ID, name.c_str()), (int) value);
+// }
+// void OpenGLShader::setInt(const std::string& name, int value) const
+// {
+//     glUniform1i(glGetUniformLocation(ID, name.c_str()), value);
+// }
+// void OpenGLShader::setFloat(const std::string& name, float value) const
+// {
+//     glUniform1f(glGetUniformLocation(ID, name.c_str()), value);
+// }
+
 } // namespace Lumina

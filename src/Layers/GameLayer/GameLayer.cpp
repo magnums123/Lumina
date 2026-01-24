@@ -1,4 +1,3 @@
-#include "Core/Event.h"
 #include <Core/Application.h>
 #include <Core/Log.h>
 #include <GLFW/glfw3.h>
@@ -11,7 +10,10 @@ namespace Lumina
 void GameLayer::OnAttach()
 {
     app = Application::Get();
-    testShader = new Shader("test_vert.glsl", "test_frag.glsl");
+
+    std::string vPth = "test_vert.glsl", fPth = "test_frag.glsl";
+    testShader = RHIShader::Create(vPth, fPth);
+
     triangleMesh = new Mesh{vertices, indices, *testShader};
     testScene.meshes.push_back(triangleMesh);
     ENGINE_LOG(this->GetName() << " attached");
@@ -20,7 +22,7 @@ void GameLayer::OnAttach()
 void GameLayer::OnDetach()
 {
     app = nullptr;
-    testShader = nullptr;
+    delete testShader;
     delete triangleMesh;
     ENGINE_LOG("GameLayer detached");
 }

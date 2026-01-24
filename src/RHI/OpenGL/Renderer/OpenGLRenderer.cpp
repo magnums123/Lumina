@@ -33,7 +33,8 @@ void OpenGLRenderer::SubmitScene(const Scene& scene)
 
 void OpenGLRenderer::DrawMesh(const Mesh* mesh)
 {
-    mesh->shader->use();
+    mesh->shader->Use();
+    mesh->shader->SetUniforms();
     mesh->vertexArrayBuffer->Bind();
 
     if (mesh->usesIndices)

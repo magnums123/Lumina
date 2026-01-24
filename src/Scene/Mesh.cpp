@@ -1,11 +1,11 @@
 #include "Mesh.h"
-#include "RHI/OpenGL/Shader/OpenGLShader.h"
 #include <Scene/Vertex.h>
+#include <glad/glad.h>
 
 namespace Lumina
 {
 
-Mesh::Mesh(const std::vector<Vertex>& vertices, Shader& shader, int numInstances) :
+Mesh::Mesh(const std::vector<Vertex>& vertices, RHIShader& shader, int numInstances) :
     numInstances(numInstances), shader(&shader), vertices(vertices)
 {
     usesIndices = false;
@@ -23,7 +23,7 @@ Mesh::Mesh(const std::vector<Vertex>& vertices, Shader& shader, int numInstances
 
 Mesh::Mesh(const std::vector<Vertex>& vertices,
     const std::vector<unsigned int>& indices,
-    Shader& shader,
+    RHIShader& shader,
     int numInstances) :
     numInstances(numInstances), shader(&shader), vertices(vertices), indices(indices)
 {
@@ -36,7 +36,8 @@ Mesh::Mesh(const std::vector<Vertex>& vertices,
         GL_STATIC_DRAW);
 
     indexBuffer->Bind();
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size(), indices.data(), GL_STATIC_DRAW);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int),
+        indices.data(), GL_STATIC_DRAW);
 
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*) 0);
 

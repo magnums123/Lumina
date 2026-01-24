@@ -2,9 +2,9 @@
 #include "Scene/Camera.h"
 #include <Core/Application.h>
 #include <Core/Layer.h>
+#include <RHI/Shader.h>
 #include <Scene/Scene.h>
 #include <Scene/Vertex.h>
-#include <glad/glad.h>
 
 namespace Lumina
 {
@@ -13,7 +13,7 @@ class GameLayer : public Layer
   private:
     Application* app;
 
-    Shader* testShader = nullptr;
+    RHIShader* testShader = nullptr;
     Mesh* triangleMesh = nullptr;
 
     std::vector<Vertex> vertices{{{0.5f, 0.5f, 0.0f}}, {{0.5f, -0.5f, 0.0f}},
