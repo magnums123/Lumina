@@ -8,6 +8,9 @@ namespace Lumina
 Mesh::Mesh(const std::vector<Vertex>& vertices, RHIShader& shader, int numInstances) :
     numInstances(numInstances), shader(&shader), vertices(vertices)
 {
+    vertexArrayBuffer = RHIBuffer::Create(BufferType::VertexArray);
+    vertexBuffer = RHIBuffer::Create(BufferType::VertexBuffer);
+
     usesIndices = false;
 
     vertexArrayBuffer->Bind();
@@ -27,6 +30,10 @@ Mesh::Mesh(const std::vector<Vertex>& vertices,
     int numInstances) :
     numInstances(numInstances), shader(&shader), vertices(vertices), indices(indices)
 {
+    vertexArrayBuffer = RHIBuffer::Create(BufferType::VertexArray);
+    vertexBuffer = RHIBuffer::Create(BufferType::VertexBuffer);
+    indexBuffer = RHIBuffer::Create(BufferType::IndexBuffer);
+
     usesIndices = true;
 
     vertexArrayBuffer->Bind();
@@ -47,7 +54,8 @@ Mesh::~Mesh()
 {
     delete vertexArrayBuffer;
     delete vertexBuffer;
-    delete indexBuffer;
+    if (usesIndices)
+        delete indexBuffer;
 }
 
 } // namespace Lumina

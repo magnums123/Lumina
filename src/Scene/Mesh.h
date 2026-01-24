@@ -21,9 +21,9 @@ class Mesh
 
     RHIShader* shader;
 
-    RHIBuffer* vertexArrayBuffer = RHIBuffer::Create(BufferType::VertexArray);
-    RHIBuffer* vertexBuffer = RHIBuffer::Create(BufferType::VertexBuffer);
-    RHIBuffer* indexBuffer = RHIBuffer::Create(BufferType::IndexBuffer);
+    RHIBuffer* vertexArrayBuffer;
+    RHIBuffer* vertexBuffer;
+    RHIBuffer* indexBuffer;
 
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
