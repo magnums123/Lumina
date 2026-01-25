@@ -40,8 +40,8 @@ void GameLayer::OnEvent(Event& e)
     dispatcher.Dispatch<KeyPressEvent>(
         [this](KeyPressEvent& e)
             {
-                ENGINE_LOG("event triggered: " << e.GetName() << " From: " << GetName());
-                ENGINE_LOG("Event key is: " << e.key);
+                // ENGINE_LOG("event triggered: " << e.GetName() << " From: " <<
+                // GetName()); ENGINE_LOG("Event key is: " << e.key);
 
                 if (e.key == GLFW_KEY_ESCAPE)
                     {

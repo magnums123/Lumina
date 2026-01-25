@@ -1,5 +1,5 @@
 #include "Mesh.h"
-#include "RHI/Buffer.h"
+#include <RHI/Buffer.h>
 #include <Scene/Vertex.h>
 #include <glad/glad.h>
 
@@ -17,18 +17,6 @@ Mesh::Mesh(const std::vector<Vertex>& vertices, RHIShader& shader, int numInstan
     vertexArrayBuffer->Bind();
     vertexBuffer->Bind();
     RHIBuffer::SetupData(vertexBuffer, vertices);
-
-    const auto& layout = Vertex::GetLayout();
-    uint32_t index = 0;
-
-    for (const auto& element : layout.GetElements())
-        {
-            glEnableVertexAttribArray(index);
-            glVertexAttribPointer(index, element.size / 4, GL_FLOAT,
-                element.normalized ? GL_TRUE : GL_FALSE, layout.GetStride(),
-                (const void*) element.offset);
-            index++;
-        }
 }
 
 Mesh::Mesh(const std::vector<Vertex>& vertices,
@@ -50,18 +38,6 @@ Mesh::Mesh(const std::vector<Vertex>& vertices,
 
     indexBuffer->Bind();
     RHIBuffer::SetupData<unsigned int>(indexBuffer, indices);
-
-    const auto& layout = Vertex::GetLayout();
-    uint32_t index = 0;
-
-    for (const auto& element : layout.GetElements())
-        {
-            glEnableVertexAttribArray(index);
-            glVertexAttribPointer(index, element.size / 4, GL_FLOAT,
-                element.normalized ? GL_TRUE : GL_FALSE, layout.GetStride(),
-                (const void*) element.offset);
-            index++;
-        }
 }
 Mesh::~Mesh()
 {

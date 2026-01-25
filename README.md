@@ -1,73 +1,138 @@
-## Lumina Game Engine
+# Lumina Renderer 1.0
 
-Lumina is a lightweight, modular 3D game engine written in C++20/23, designed with flexibility and future expansion in mind.
-Currently, it supports OpenGL rendering and GLFW for window/context management. The engine is being developed from scratch with a focus on a clean architecture and modular RHI (Rendering Hardware Interface) design, allowing for future support for Vulkan and DirectX.
+A minimal, real-time 3D renderer built in modern C++ with a clean, backend-agnostic architecture.
 
+The project focuses on correctness, clarity, and solid software design rather than advanced rendering features. This renderer is intended as a learning project and a portfolio piece, not a full game engine.
 
----
+## Project Goals
 
-### Features (WIP)
+The primary goal of this project is to design and implement a small but well-architected rendering system that:
 
-- Modular Layer system for game logic and rendering
+- Renders a 3D scene (meshes + camera) in real time
+- Maintains a stable 60 FPS on simple scenes
+- Cleanly separates engine systems from the rendering backend
+- Uses modern C++ (C++23) idioms and language features
+- Is small enough to be completed within 1–3 months
 
-- OpenGL Renderer with basic shader and buffer management
+## Functional Requirements
 
-- GLFW-based window creation and input handling
+### Scene Rendering
+Render a scene consisting of:
+- Meshes
+- A camera
 
-- Event system for flexible input and window events
+### Display
+- Display output in a window and update every frame
 
-- Abstracted RHI design for multi-backend support
+### Lighting
+Support basic lighting:
+- Blinn-Phong or simple PBR
 
-- Scene and camera abstractions (planned)
+### Performance
+- Stable real-time performance (~16ms per frame)
 
+### Collision Detection
+Very simple collision detection:
+- Spheres
+- Axis-Aligned Bounding Boxes (AABBs)
 
+### Final Demonstration
+A small playable demo:
+- A simple game where the player rolls/controls a ball through an obstacle course
+- Used to validate that the renderer is practical and usable, not just a tech demo
 
----
+## Non-Functional Requirements
 
-### Getting Started
+### Scalability
+- The renderer can be used without knowing which graphics backend is active
+- Features can be added incrementally using layers
+- Simple scenes can grow in complexity without major performance degradation
 
-#### Requirements
+### Usability
+- Backend-agnostic public API
+- Clean separation between engine code and rendering implementation
+- Ability to add custom application layers without modifying the renderer core
 
-- C++20/23 compiler (g++, clang++)
+## Architecture Overview
 
-- GLFW
+The engine follows an event-driven, layered architecture, inspired by engines such as Hazel (Cherno).
 
-- GLM(included)
+### High-Level Structure
 
-- GLAD(included)
+**Core**
+- Application lifecycle
+- Layer stack
+- Event system
 
+**Renderer API**
+- Backend-agnostic interfaces (buffers, shaders, textures, etc.)
 
-> GLFW should be installed globally.
+**Rendering Backend**
+- Concrete implementation (initially OpenGL)
 
+**Layers**
+- Game logic
+- Rendering logic
+- Input handling
 
+**Scene**
+- Camera
+- Meshes
+- Basic collision primitives
 
-### Build
+### Key Architectural Rule
 
-Clone the repository:
-```
-git clone https://github.com/magnums123/Lumina.git  
-cd Lumina  
-```
-Build using the provided Makefile:  
-Copy code  
-``` Bash
-make
-```
-Run the engine:  
-``` Bash  
-./LuminaEngine
-```
----
+**No graphics-API-specific headers or types (OpenGL, Vulkan, etc.) are allowed outside the rendering backend.**
 
-### Contributing  
-This engine is in the very early stages. Contributions and suggestions are welcome, especially regarding:  
-- Renderer design (OpenGL, Vulkan, DX)  
-- Scene abstraction  
-- Event and Layer system improvements  
+### Rendering Backend
 
----
-### License  
-MIT License. See LICENSE for more details.  
+- **Initial backend:** OpenGL
+- The architecture is designed to allow additional backends (e.g. Vulkan) in the future
+- Only one backend is implemented for this project
 
----
-I kept it **lightweight but clear**, with room to grow.
+## Non-Goals
+
+To keep scope under control, the following are explicitly out of scope:
+
+- No ECS
+- No editor
+- No multithreaded renderer
+- No deferred rendering
+- No advanced physics engine
+- No complex asset pipeline
+- No scripting system
+
+## Constraints
+
+- **Time budget:** 1–3 months
+- **Language standard:** C++23
+- **Target platform:** Desktop (Linux / Windows)
+- **Performance target:** 60 FPS on simple scenes
+
+## Development Philosophy
+
+### No AI-Generated Code
+- All code is written manually
+- Bugs and issues are researched via documentation and search engines
+
+### Emphasis on:
+- Clear abstractions
+- Readable code
+- Correctness over cleverness
+
+### Prefer modern C++ features over legacy patterns:
+- RAII
+- Strong typing
+- Standard library containers and utilities
+
+## Why This Project Exists
+
+The term "3D game engine" is extremely broad.
+
+This project deliberately narrows the scope to focus on:
+- Rendering fundamentals
+- Engine architecture
+- Graphics programming concepts
+- Building something complete and explainable
+
+The result is a renderer that is small, understandable, and suitable for a portfolio.

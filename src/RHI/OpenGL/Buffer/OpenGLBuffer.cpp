@@ -24,7 +24,6 @@ OpenGLBuffer::OpenGLBuffer(BufferType bufferType) : RHIBuffer(bufferType)
                 ENGINE_WARN("Invalid BufferType Created.");
                 break;
         }
-    ENGINE_LOG("Created New Buffer");
 }
 
 OpenGLBuffer::~OpenGLBuffer() { Delete(); }
@@ -80,6 +79,22 @@ void OpenGLBuffer::SetData(const void* data, size_t size)
                 break;
             default:
                 break;
+        }
+    SetupVertexAttribute();
+}
+
+void OpenGLBuffer::SetupVertexAttribute()
+{
+    const auto& layout = Vertex::GetLayout();
+    uint32_t index = 0;
+
+    for (const auto& element : layout.GetElements())
+        {
+            glEnableVertexAttribArray(index);
+            glVertexAttribPointer(index, element.size / 4, GL_FLOAT,
+                element.normalized ? GL_TRUE : GL_FALSE, layout.GetStride(),
+                (const void*) element.offset);
+            index++;
         }
 }
 

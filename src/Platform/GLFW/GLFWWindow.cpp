@@ -44,7 +44,6 @@ void GLFWWindow::Init(const WindowProps& props)
             {
                 if (action == GLFW_PRESS)
                     {
-                        ENGINE_LOG("KeyPressEvent Triggered");
                         KeyPressEvent event;
                         event.key = key;
                         event.scancode = scancode;
@@ -56,7 +55,6 @@ void GLFWWindow::Init(const WindowProps& props)
                     }
                 else if (action == GLFW_RELEASE)
                     {
-                        ENGINE_LOG("KeyReleaseEvent Triggered");
                         KeyReleaseEvent event;
                         event.key = key;
                         event.scancode = scancode;

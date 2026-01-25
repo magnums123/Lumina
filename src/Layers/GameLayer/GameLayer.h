@@ -6,6 +6,9 @@
 #include <Scene/Scene.h>
 #include <Scene/Vertex.h>
 
+// std::vector<Vertex> vertices{{{0.5f, 0.5f, 0.0f}}, {{0.5f, -0.5f, 0.0f}},
+//     {{-0.5f, -0.5f, 0.0f}}, {{-0.5f, 0.5f, 0.0f}}};
+
 namespace Lumina
 {
 class GameLayer : public Layer
@@ -16,8 +19,10 @@ class GameLayer : public Layer
     RHIShader* testShader = nullptr;
     Mesh* triangleMesh = nullptr;
 
-    std::vector<Vertex> vertices{{{0.5f, 0.5f, 0.0f}}, {{0.5f, -0.5f, 0.0f}},
-        {{-0.5f, -0.5f, 0.0f}}, {{-0.5f, 0.5f, 0.0f}}};
+    std::vector<Vertex> vertices{{{0.5f, 0.5f, 0.0f}, {1.f, 0.5f, 1.0f}},
+        {{0.5f, -0.5f, 0.0f}, {1.f, 0.5f, 1.0f}},
+        {{-0.5f, -0.5f, 0.0f}, {1.f, 0.5f, 1.0f}},
+        {{-0.5f, 0.5f, 0.0f}, {1.f, 0.5f, 1.0f}}};
     std::vector<unsigned int> indices = {0, 1, 3, 1, 2, 3};
 
     Camera camera{75.f, 1920, 1080};

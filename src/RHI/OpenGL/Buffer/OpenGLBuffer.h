@@ -6,7 +6,10 @@ namespace Lumina
 
 class OpenGLBuffer : public RHIBuffer
 {
+  private:
     unsigned int ID = 0;
+
+    void SetupVertexAttribute();
 
   public:
     OpenGLBuffer(BufferType bufferType);
