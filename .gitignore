@@ -40,5 +40,5 @@
 # debug information files
 *.dwo
 #Mine
-LuminaEngine
-core
+.cache
+build/*
