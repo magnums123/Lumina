@@ -11,15 +11,20 @@ target_include_directories(Lumina
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/src
         ${CMAKE_CURRENT_SOURCE_DIR}/external/glad/include
-        ${CMAKE_CURRENT_SOURCE_DIR}/external/glm
+        ${CMAKE_CURRENT_SOURCE_DIR}/external/glm/glm
+        ${CMAKE_CURRENT_SOURCE_DIR}/external/spdlog/include
 )
 
 # glad
 add_subdirectory(external/glad)
+add_subdirectory(external/glm)
+add_subdirectory(external/spdlog)
 
 target_link_libraries(Lumina
     PUBLIC
         glad
+        glm
+        spdlog
 )
 
 # Platform-specific stuff (Linux)

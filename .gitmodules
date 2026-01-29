@@ -1,0 +1,6 @@
+[submodule "Lumina/external/glm"]
+	path = Lumina/external/glm
+	url = https://github.com/g-truc/glm.git
+[submodule "Lumina/external/spdlog"]
+	path = Lumina/external/spdlog
+	url = https://github.com/gabime/spdlog.git

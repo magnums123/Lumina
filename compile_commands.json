@@ -1,7 +1,7 @@
 [
 {
   "directory": "/data/data/com.termux/files/home/Lumina/build/Lumina",
-  "command": "/data/data/com.termux/files/usr/bin/c++ -DLUMINA_BUILD_DLL -DLumina_EXPORTS -I/data/data/com.termux/files/home/Lumina/Lumina/src -I/data/data/com.termux/files/home/Lumina/Lumina/external/glad/include -I/data/data/com.termux/files/home/Lumina/Lumina/external/glm -O2 -g -DNDEBUG -std=gnu++23 -fPIC -o CMakeFiles/Lumina.dir/src/Lumina/Application.cpp.o -c /data/data/com.termux/files/home/Lumina/Lumina/src/Lumina/Application.cpp",
+  "command": "/data/data/com.termux/files/usr/bin/c++ -DLUMINA_BUILD_DLL -DLumina_EXPORTS -DSPDLOG_COMPILED_LIB -I/data/data/com.termux/files/home/Lumina/Lumina/src -I/data/data/com.termux/files/home/Lumina/Lumina/external/glad/include -I/data/data/com.termux/files/home/Lumina/Lumina/external/glm/glm -I/data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/include -I/data/data/com.termux/files/home/Lumina/Lumina/external/glm -O2 -g -DNDEBUG -std=gnu++23 -fPIC -o CMakeFiles/Lumina.dir/src/Lumina/Application.cpp.o -c /data/data/com.termux/files/home/Lumina/Lumina/src/Lumina/Application.cpp",
   "file": "/data/data/com.termux/files/home/Lumina/Lumina/src/Lumina/Application.cpp",
   "output": "Lumina/CMakeFiles/Lumina.dir/src/Lumina/Application.cpp.o"
 },
@@ -12,8 +12,56 @@
   "output": "Lumina/external/glad/CMakeFiles/glad.dir/src/glad.cpp.o"
 },
 {
+  "directory": "/data/data/com.termux/files/home/Lumina/build/Lumina/external/glm/glm",
+  "command": "/data/data/com.termux/files/usr/bin/c++ -DGLM_FORCE_CXX20 -I/data/data/com.termux/files/home/Lumina/Lumina/external/glm -O2 -g -DNDEBUG -std=c++20 -fPIC -Wno-c++98-compat -Wno-c++98-compat-pedantic -Wno-switch-default -ffast-math -o CMakeFiles/glm.dir/detail/glm.cpp.o -c /data/data/com.termux/files/home/Lumina/Lumina/external/glm/glm/detail/glm.cpp",
+  "file": "/data/data/com.termux/files/home/Lumina/Lumina/external/glm/glm/detail/glm.cpp",
+  "output": "Lumina/external/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.o"
+},
+{
+  "directory": "/data/data/com.termux/files/home/Lumina/build/Lumina/external/spdlog",
+  "command": "/data/data/com.termux/files/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/include -O2 -g -DNDEBUG -std=c++23 -fPIC -o CMakeFiles/spdlog.dir/src/spdlog.cpp.o -c /data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/src/spdlog.cpp",
+  "file": "/data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/src/spdlog.cpp",
+  "output": "Lumina/external/spdlog/CMakeFiles/spdlog.dir/src/spdlog.cpp.o"
+},
+{
+  "directory": "/data/data/com.termux/files/home/Lumina/build/Lumina/external/spdlog",
+  "command": "/data/data/com.termux/files/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/include -O2 -g -DNDEBUG -std=c++23 -fPIC -o CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o -c /data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/src/stdout_sinks.cpp",
+  "file": "/data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/src/stdout_sinks.cpp",
+  "output": "Lumina/external/spdlog/CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o"
+},
+{
+  "directory": "/data/data/com.termux/files/home/Lumina/build/Lumina/external/spdlog",
+  "command": "/data/data/com.termux/files/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/include -O2 -g -DNDEBUG -std=c++23 -fPIC -o CMakeFiles/spdlog.dir/src/color_sinks.cpp.o -c /data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/src/color_sinks.cpp",
+  "file": "/data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/src/color_sinks.cpp",
+  "output": "Lumina/external/spdlog/CMakeFiles/spdlog.dir/src/color_sinks.cpp.o"
+},
+{
+  "directory": "/data/data/com.termux/files/home/Lumina/build/Lumina/external/spdlog",
+  "command": "/data/data/com.termux/files/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/include -O2 -g -DNDEBUG -std=c++23 -fPIC -o CMakeFiles/spdlog.dir/src/file_sinks.cpp.o -c /data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/src/file_sinks.cpp",
+  "file": "/data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/src/file_sinks.cpp",
+  "output": "Lumina/external/spdlog/CMakeFiles/spdlog.dir/src/file_sinks.cpp.o"
+},
+{
+  "directory": "/data/data/com.termux/files/home/Lumina/build/Lumina/external/spdlog",
+  "command": "/data/data/com.termux/files/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/include -O2 -g -DNDEBUG -std=c++23 -fPIC -o CMakeFiles/spdlog.dir/src/async.cpp.o -c /data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/src/async.cpp",
+  "file": "/data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/src/async.cpp",
+  "output": "Lumina/external/spdlog/CMakeFiles/spdlog.dir/src/async.cpp.o"
+},
+{
+  "directory": "/data/data/com.termux/files/home/Lumina/build/Lumina/external/spdlog",
+  "command": "/data/data/com.termux/files/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/include -O2 -g -DNDEBUG -std=c++23 -fPIC -o CMakeFiles/spdlog.dir/src/cfg.cpp.o -c /data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/src/cfg.cpp",
+  "file": "/data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/src/cfg.cpp",
+  "output": "Lumina/external/spdlog/CMakeFiles/spdlog.dir/src/cfg.cpp.o"
+},
+{
+  "directory": "/data/data/com.termux/files/home/Lumina/build/Lumina/external/spdlog",
+  "command": "/data/data/com.termux/files/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/include -O2 -g -DNDEBUG -std=c++23 -fPIC -o CMakeFiles/spdlog.dir/src/bundled_fmtlib_format.cpp.o -c /data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/src/bundled_fmtlib_format.cpp",
+  "file": "/data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/src/bundled_fmtlib_format.cpp",
+  "output": "Lumina/external/spdlog/CMakeFiles/spdlog.dir/src/bundled_fmtlib_format.cpp.o"
+},
+{
   "directory": "/data/data/com.termux/files/home/Lumina/build/Sandbox",
-  "command": "/data/data/com.termux/files/usr/bin/c++  -I/data/data/com.termux/files/home/Lumina/Lumina/src -I/data/data/com.termux/files/home/Lumina/Lumina/external/glad/include -I/data/data/com.termux/files/home/Lumina/Lumina/external/glm -O2 -g -DNDEBUG -std=gnu++23 -fPIE -o CMakeFiles/Sandbox.dir/src/Sandbox.cpp.o -c /data/data/com.termux/files/home/Lumina/Sandbox/src/Sandbox.cpp",
+  "command": "/data/data/com.termux/files/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/data/data/com.termux/files/home/Lumina/Lumina/src -I/data/data/com.termux/files/home/Lumina/Lumina/external/glad/include -I/data/data/com.termux/files/home/Lumina/Lumina/external/glm/glm -I/data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/include -I/data/data/com.termux/files/home/Lumina/Lumina/external/glm -O2 -g -DNDEBUG -std=gnu++23 -fPIE -o CMakeFiles/Sandbox.dir/src/Sandbox.cpp.o -c /data/data/com.termux/files/home/Lumina/Sandbox/src/Sandbox.cpp",
   "file": "/data/data/com.termux/files/home/Lumina/Sandbox/src/Sandbox.cpp",
   "output": "Sandbox/CMakeFiles/Sandbox.dir/src/Sandbox.cpp.o"
 }
