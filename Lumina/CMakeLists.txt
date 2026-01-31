@@ -14,21 +14,41 @@ target_include_directories(Lumina
         ${CMAKE_CURRENT_SOURCE_DIR}/external/glm/glm
         ${CMAKE_CURRENT_SOURCE_DIR}/external/spdlog/include
         ${CMAKE_CURRENT_SOURCE_DIR}/external/glfw/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/external/imgui
 )
 
-find_package(glfw3 REQUIRED)
+find_package(Vulkan REQUIRED)
+
+# In GLFW build
+set(GLFW_BUILD_WIN32 OFF CACHE BOOL "" FORCE)
+set(GLFW_BUILD_X11 ON CACHE BOOL "" FORCE)
+set(GLFW_BUILD_WAYLAND OFF CACHE BOOL "" FORCE)
+set(GLFW_BUILD_COCOA OFF CACHE BOOL "" FORCE)
+
+set(GLFW_BUILD_LINUX_JOYSTICK OFF CACHE BOOL "" FORCE)
+set(GLFW_USE_JOYSTICK OFF CACHE BOOL "" FORCE)
+
+set(GLFW_BUILD_EXAMPLES OFF)
+set(GLFW_BUILD_TESTS OFF)
+set(GLFW_BUILD_DOCS OFF)
 
 add_subdirectory(external/glad)
 add_subdirectory(external/glm)
 add_subdirectory(external/spdlog)
+add_subdirectory(external/glfw)
+add_subdirectory(external/imgui)
 
 target_link_libraries(Lumina
     PRIVATE
         glad
         spdlog
+        Vulkan::Vulkan
         glfw
+        imgui
+        imgui_vulkan
     PUBLIC
         glm
+        X11
 )
 
 # Platform-specific stuff (Linux)

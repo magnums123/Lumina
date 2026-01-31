@@ -1,5 +1,4 @@
 #pragma once
-#include "Lumina/Log.h"
 #include <Lumina.h>
 
 extern Lumina::Application* Lumina::CreateApplication();

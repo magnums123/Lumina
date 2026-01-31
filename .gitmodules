@@ -7,3 +7,6 @@
 [submodule "Lumina/external/imgui"]
 	path = Lumina/external/imgui
 	url = git@github.com:ocornut/imgui.git
+[submodule "Lumina/external/glfw"]
+	path = Lumina/external/glfw
+	url = git@github.com:glfw/glfw.git
