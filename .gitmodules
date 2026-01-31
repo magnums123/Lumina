@@ -4,3 +4,6 @@
 [submodule "Lumina/external/spdlog"]
 	path = Lumina/external/spdlog
 	url = https://github.com/gabime/spdlog.git
+[submodule "Lumina/external/imgui"]
+	path = Lumina/external/imgui
+	url = git@github.com:ocornut/imgui.git
