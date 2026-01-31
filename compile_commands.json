@@ -1,7 +1,7 @@
 [
 {
   "directory": "/data/data/com.termux/files/home/Lumina/build/Lumina",
-  "command": "/data/data/com.termux/files/usr/bin/c++ -DLUMINA_BUILD_DLL -DLumina_EXPORTS -DSPDLOG_COMPILED_LIB -I/data/data/com.termux/files/home/Lumina/Lumina/src -I/data/data/com.termux/files/home/Lumina/Lumina/external/glad/include -I/data/data/com.termux/files/home/Lumina/Lumina/external/glm/glm -I/data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/include -I/data/data/com.termux/files/home/Lumina/Lumina/external/glfw/include -I/data/data/com.termux/files/home/Lumina/Lumina/external/glm -O2 -g -DNDEBUG -std=gnu++23 -fPIC -o CMakeFiles/Lumina.dir/src/Lumina/Application.cpp.o -c /data/data/com.termux/files/home/Lumina/Lumina/src/Lumina/Application.cpp",
+  "command": "/data/data/com.termux/files/usr/bin/c++ -DLUMINA_BUILD_DLL -DLumina_EXPORTS -DSPDLOG_COMPILED_LIB -I/data/data/com.termux/files/home/Lumina/Lumina/src -I/data/data/com.termux/files/home/Lumina/Lumina/external/glad/include -I/data/data/com.termux/files/home/Lumina/Lumina/external/glm/glm -I/data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/include -I/data/data/com.termux/files/home/Lumina/Lumina/external/glm -O2 -g -DNDEBUG -std=gnu++23 -fPIC -o CMakeFiles/Lumina.dir/src/Lumina/Application.cpp.o -c /data/data/com.termux/files/home/Lumina/Lumina/src/Lumina/Application.cpp",
   "file": "/data/data/com.termux/files/home/Lumina/Lumina/src/Lumina/Application.cpp",
   "output": "Lumina/CMakeFiles/Lumina.dir/src/Lumina/Application.cpp.o"
 },
@@ -61,7 +61,7 @@
 },
 {
   "directory": "/data/data/com.termux/files/home/Lumina/build/Sandbox",
-  "command": "/data/data/com.termux/files/usr/bin/c++  -I/data/data/com.termux/files/home/Lumina/Lumina/src -I/data/data/com.termux/files/home/Lumina/Lumina/external/glad/include -I/data/data/com.termux/files/home/Lumina/Lumina/external/glm/glm -I/data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/include -I/data/data/com.termux/files/home/Lumina/Lumina/external/glfw/include -I/data/data/com.termux/files/home/Lumina/Lumina/external/glm -O2 -g -DNDEBUG -std=gnu++23 -fPIE -o CMakeFiles/Sandbox.dir/src/Sandbox.cpp.o -c /data/data/com.termux/files/home/Lumina/Sandbox/src/Sandbox.cpp",
+  "command": "/data/data/com.termux/files/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/data/data/com.termux/files/home/Lumina/Lumina/src -I/data/data/com.termux/files/home/Lumina/Lumina/external/glad/include -I/data/data/com.termux/files/home/Lumina/Lumina/external/glm/glm -I/data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/include -I/data/data/com.termux/files/home/Lumina/Lumina/external/glm -O2 -g -DNDEBUG -std=gnu++23 -fPIE -o CMakeFiles/Sandbox.dir/src/Sandbox.cpp.o -c /data/data/com.termux/files/home/Lumina/Sandbox/src/Sandbox.cpp",
   "file": "/data/data/com.termux/files/home/Lumina/Sandbox/src/Sandbox.cpp",
   "output": "Sandbox/CMakeFiles/Sandbox.dir/src/Sandbox.cpp.o"
 }

@@ -16,19 +16,31 @@ target_include_directories(Lumina
         ${CMAKE_CURRENT_SOURCE_DIR}/external/glfw/include
 )
 
-find_package(glfw3 REQUIRED)
+#So glfw can be built in termux
+set(GLFW_BUILD_X11 OFF)
+set(GLFW_BUILD_WAYLAND ON)
 
+set(GLFW_BUILD_EXAMPLES OFF)
+set(GLFW_BUILD_TESTS OFF)
+set(GLFW_BUILD_DOCS OFF)
+
+# set(GLFW_USE_WAYLAND ON)
+set(GLFW_X11_XRANDR OFF CACHE BOOL "" FORCE)
+set(GLFW_LIBRARY_TYPE STATIC)
+# set(GLFW_USE_XRANDR OFF)
+
+# glad
 add_subdirectory(external/glad)
 add_subdirectory(external/glm)
 add_subdirectory(external/spdlog)
+add_subdirectory(external/glfw)
 
 target_link_libraries(Lumina
-    PRIVATE
+    PUBLIC
         glad
+        glm
         spdlog
         glfw
-    PUBLIC
-        glm
 )
 
 # Platform-specific stuff (Linux)
