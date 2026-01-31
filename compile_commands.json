@@ -1,7 +1,7 @@
 [
 {
   "directory": "/data/data/com.termux/files/home/Lumina/build/Lumina",
-  "command": "/data/data/com.termux/files/usr/bin/c++ -DLUMINA_BUILD_DLL -DLumina_EXPORTS -DSPDLOG_COMPILED_LIB -I/data/data/com.termux/files/home/Lumina/Lumina/src -I/data/data/com.termux/files/home/Lumina/Lumina/external/glad/include -I/data/data/com.termux/files/home/Lumina/Lumina/external/glm/glm -I/data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/include -I/data/data/com.termux/files/home/Lumina/Lumina/external/glfw/include -I/data/data/com.termux/files/home/Lumina/Lumina/external/glm -O2 -g -DNDEBUG -std=gnu++23 -fPIC -o CMakeFiles/Lumina.dir/src/Lumina/Application.cpp.o -c /data/data/com.termux/files/home/Lumina/Lumina/src/Lumina/Application.cpp",
+  "command": "/data/data/com.termux/files/usr/bin/c++ -DLUMINA_BUILD_DLL -DLumina_EXPORTS -DSPDLOG_COMPILED_LIB -I/data/data/com.termux/files/home/Lumina/Lumina/src -I/data/data/com.termux/files/home/Lumina/Lumina/external/glad/include -I/data/data/com.termux/files/home/Lumina/Lumina/external/glm/glm -I/data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/include -I/data/data/com.termux/files/home/Lumina/Lumina/external/glfw/include -I/data/data/com.termux/files/home/Lumina/Lumina/external/imgui -I/data/data/com.termux/files/home/Lumina/Lumina/external/glm -O2 -g -DNDEBUG -std=gnu++23 -fPIC -o CMakeFiles/Lumina.dir/src/Lumina/Application.cpp.o -c /data/data/com.termux/files/home/Lumina/Lumina/src/Lumina/Application.cpp",
   "file": "/data/data/com.termux/files/home/Lumina/Lumina/src/Lumina/Application.cpp",
   "output": "Lumina/CMakeFiles/Lumina.dir/src/Lumina/Application.cpp.o"
 },
@@ -60,8 +60,38 @@
   "output": "Lumina/external/spdlog/CMakeFiles/spdlog.dir/src/bundled_fmtlib_format.cpp.o"
 },
 {
+  "directory": "/data/data/com.termux/files/home/Lumina/build/Lumina/external/imgui",
+  "command": "/data/data/com.termux/files/usr/bin/c++  -I/data/data/com.termux/files/home/Lumina/Lumina/external/imgui -O2 -g -DNDEBUG -std=gnu++23 -fPIC -w -o CMakeFiles/imgui.dir/imgui.cpp.o -c /data/data/com.termux/files/home/Lumina/Lumina/external/imgui/imgui.cpp",
+  "file": "/data/data/com.termux/files/home/Lumina/Lumina/external/imgui/imgui.cpp",
+  "output": "Lumina/external/imgui/CMakeFiles/imgui.dir/imgui.cpp.o"
+},
+{
+  "directory": "/data/data/com.termux/files/home/Lumina/build/Lumina/external/imgui",
+  "command": "/data/data/com.termux/files/usr/bin/c++  -I/data/data/com.termux/files/home/Lumina/Lumina/external/imgui -O2 -g -DNDEBUG -std=gnu++23 -fPIC -w -o CMakeFiles/imgui.dir/imgui_draw.cpp.o -c /data/data/com.termux/files/home/Lumina/Lumina/external/imgui/imgui_draw.cpp",
+  "file": "/data/data/com.termux/files/home/Lumina/Lumina/external/imgui/imgui_draw.cpp",
+  "output": "Lumina/external/imgui/CMakeFiles/imgui.dir/imgui_draw.cpp.o"
+},
+{
+  "directory": "/data/data/com.termux/files/home/Lumina/build/Lumina/external/imgui",
+  "command": "/data/data/com.termux/files/usr/bin/c++  -I/data/data/com.termux/files/home/Lumina/Lumina/external/imgui -O2 -g -DNDEBUG -std=gnu++23 -fPIC -w -o CMakeFiles/imgui.dir/imgui_tables.cpp.o -c /data/data/com.termux/files/home/Lumina/Lumina/external/imgui/imgui_tables.cpp",
+  "file": "/data/data/com.termux/files/home/Lumina/Lumina/external/imgui/imgui_tables.cpp",
+  "output": "Lumina/external/imgui/CMakeFiles/imgui.dir/imgui_tables.cpp.o"
+},
+{
+  "directory": "/data/data/com.termux/files/home/Lumina/build/Lumina/external/imgui",
+  "command": "/data/data/com.termux/files/usr/bin/c++  -I/data/data/com.termux/files/home/Lumina/Lumina/external/imgui -O2 -g -DNDEBUG -std=gnu++23 -fPIC -w -o CMakeFiles/imgui.dir/imgui_widgets.cpp.o -c /data/data/com.termux/files/home/Lumina/Lumina/external/imgui/imgui_widgets.cpp",
+  "file": "/data/data/com.termux/files/home/Lumina/Lumina/external/imgui/imgui_widgets.cpp",
+  "output": "Lumina/external/imgui/CMakeFiles/imgui.dir/imgui_widgets.cpp.o"
+},
+{
+  "directory": "/data/data/com.termux/files/home/Lumina/build/Lumina/external/imgui",
+  "command": "/data/data/com.termux/files/usr/bin/c++  -I/data/data/com.termux/files/home/Lumina/Lumina/external/imgui -O2 -g -DNDEBUG -std=gnu++23 -fPIC -o CMakeFiles/imgui_vulkan.dir/backends/imgui_impl_vulkan.cpp.o -c /data/data/com.termux/files/home/Lumina/Lumina/external/imgui/backends/imgui_impl_vulkan.cpp",
+  "file": "/data/data/com.termux/files/home/Lumina/Lumina/external/imgui/backends/imgui_impl_vulkan.cpp",
+  "output": "Lumina/external/imgui/CMakeFiles/imgui_vulkan.dir/backends/imgui_impl_vulkan.cpp.o"
+},
+{
   "directory": "/data/data/com.termux/files/home/Lumina/build/Sandbox",
-  "command": "/data/data/com.termux/files/usr/bin/c++  -I/data/data/com.termux/files/home/Lumina/Lumina/src -I/data/data/com.termux/files/home/Lumina/Lumina/external/glad/include -I/data/data/com.termux/files/home/Lumina/Lumina/external/glm/glm -I/data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/include -I/data/data/com.termux/files/home/Lumina/Lumina/external/glfw/include -I/data/data/com.termux/files/home/Lumina/Lumina/external/glm -O2 -g -DNDEBUG -std=gnu++23 -fPIE -o CMakeFiles/Sandbox.dir/src/Sandbox.cpp.o -c /data/data/com.termux/files/home/Lumina/Sandbox/src/Sandbox.cpp",
+  "command": "/data/data/com.termux/files/usr/bin/c++  -I/data/data/com.termux/files/home/Lumina/Lumina/src -I/data/data/com.termux/files/home/Lumina/Lumina/external/glad/include -I/data/data/com.termux/files/home/Lumina/Lumina/external/glm/glm -I/data/data/com.termux/files/home/Lumina/Lumina/external/spdlog/include -I/data/data/com.termux/files/home/Lumina/Lumina/external/glfw/include -I/data/data/com.termux/files/home/Lumina/Lumina/external/imgui -I/data/data/com.termux/files/home/Lumina/Lumina/external/glm -O2 -g -DNDEBUG -std=gnu++23 -fPIE -o CMakeFiles/Sandbox.dir/src/Sandbox.cpp.o -c /data/data/com.termux/files/home/Lumina/Sandbox/src/Sandbox.cpp",
   "file": "/data/data/com.termux/files/home/Lumina/Sandbox/src/Sandbox.cpp",
   "output": "Sandbox/CMakeFiles/Sandbox.dir/src/Sandbox.cpp.o"
 }
