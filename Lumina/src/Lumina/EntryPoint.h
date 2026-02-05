@@ -1,9 +1,9 @@
 #pragma once
 #include <Lumina.h>
 
-extern Lumina::Application* Lumina::CreateApplication();
+extern Lumina::Application *Lumina::CreateApplication();
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
     Lumina::Logger::Init();
     LM_CORE_INFO("Hello from core");
